@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodApp</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>FoodApp</h1>
+    <div class="first-section">
+      <h2>Choose option below</h2>
+      <div class="first-btn">
+        <button type="button" id="insperation-btn">Insperation</button>
+        <div class="first-btn-hidden">
+          <h3 id="insperation-title">Your Food Insperation</h3>
+          <button type="button" id="breakfast-btn">Breakfast</button>
+          <div class="breakfast-btn-hidden">
+          </div>
+          <button type="button" id="lunch-btn">Lunch</button>
+          <div class="lunch-btn-hidden">
+            <p>Pannkakor</p>
+          </div>
+          <button type="button" id="dinner-btn">Dinner</button>
+          <div class="dinner-btn-hidden">
+            <p>Tacos</p>
+          </div>
+          <button type="button" id="snack-btn">Snack</button>
+          <div class="snack-btn-hidden">
+            <p>Fruktsallad</p>
+          </div>
+        </div>
+      </div>
+      <div class="second-btn">
+        <button type="button" id="shoppingList-btn">Shopping List</button>
+        <div class="second-btn-hidden">
+          <h3 id="shoppingList-title">Your Shopping List</h3>
+          <p id="warning-text"></p>
+          <input type="text" id="input-value" placeholder="Add item...">
+          <button type="button" id="add">Add</button>
+          <div>
+            <ul id="list-container"></ul>
+          </div>
+          <p id="shopping-items-left">Items left to buy:</p>
+        </div>
+      </div>
+      <div class="third-btn">
+        <button type="button" id="addYourFood-btn">Add Your Food</button>
+        <div class="third-btn-hidden">
+          <h3 id="add-your-food-title">Add Your Food</h3>
+          <p id="food-title">Add food title</p>
+          <input type="text" id="input-value-foodTitle" placeholder="Add title...">
+          <p id="ingredients-title">Add ingredients</p>
+          <div class="add-more-placeholders-class"></div>
+          <button type="button" id="add-placeholders-btn"></button>
+          <p id="add-more-placeholders-title">Add ingredients </p>
+          <button type="button" id="add-all-btn">Add</button>
+          <button type="button" id="reset-btn">Reset</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

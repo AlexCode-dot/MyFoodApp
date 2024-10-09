@@ -1,0 +1,348 @@
+.container
+{
+    width: 100%;
+    background: #556B2F;
+    min-height: 100vh;
+    padding: 10px;
+}
+h1
+{
+    font-size: 55px;
+    align-items: center;
+    margin: 100px auto 20px;
+    text-align: center;
+}
+.first-section
+{
+    background-color: beige;
+    width: 100%;
+    max-width: 540px;
+    margin: 100px auto 20px;
+    border-radius: 20px;
+    padding: 40px 30px 50px;
+}
+h2
+{
+    font-size: 30px;
+    text-align: center;
+    margin-top: -10px;
+}
+#insperation-btn
+{
+    border: none;
+    outline: none;
+    background: #556B2F;
+    display: block;
+    margin: auto;
+    padding: 10px 50px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    border-radius: 20px;
+    font-size: 20px;
+    color: beige;
+    cursor: pointer;
+}
+#shoppingList-btn
+{
+    border: none;
+    outline: none;
+    background: #556B2F;
+    display: block;
+    margin: auto;
+    padding: 10px 40px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    border-radius: 20px;
+    font-size: 20px;
+    color: beige;
+    cursor: pointer;
+}
+#addYourFood-btn
+{
+    border: none;
+    outline: none;
+    background: #556B2F;
+    display: block;
+    margin: auto;
+    padding: 10px 35px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    border-radius: 20px;
+    font-size: 20px;
+    color: beige; 
+    cursor: pointer;
+}
+
+/* Section 1
+ * Insperation
+*/
+
+#insperation-title
+{
+    text-align: center;
+    font-size: 25px;
+
+}
+.first-btn-hidden
+{
+    display: none;
+}
+.first-btn-hidden > button
+{
+    display: block;
+    margin: auto;
+    border: none;
+    outline: none;
+    background: #556B2F;
+    padding: 5px 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    font-size: 15px;
+    color: beige;
+    cursor: pointer;
+}
+#breakfast-btn
+{
+    padding: 5px 12px;
+}
+#lunch-btn
+{
+    padding: 5px 23px;
+}
+#dinner-btn
+{
+    padding: 5px 22px;
+}
+#snack-btn
+{
+    padding: 5px 24px;
+}
+.breakfast-btn-hidden
+{
+    display: none;
+}
+.breakfast-btn-hidden button
+{
+    font-size: 24px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    color: #556B2F;
+    background: beige;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-decoration: underline;
+}
+.breakfast-all-inside-btn
+{
+    display: none;
+}
+.breakfast-btn-hidden ul li
+{
+    color: black;
+    font-size: 17px;
+    max-width: 30%;
+    margin: auto;
+    text-align: left;
+    margin-right: 70px;
+    margin-top: -20pxpx;
+    margin-bottom: 10px;
+}
+.lunch-btn-hidden
+{
+    display: none;
+}
+.dinner-btn-hidden
+{
+    display: none;
+}
+.snack-btn-hidden
+{
+    display: none;
+}
+
+/* Section 2
+ * Shopping List
+*/
+
+.second-btn-hidden
+{
+    display: none;
+}
+#shoppingList-title
+{
+    text-align: center;
+    font-size: 25px;
+}
+.inputArea
+{
+    justify-content: space-between;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+input
+{
+    border: none;
+    outline: none;
+    background: white;
+    padding: 10px;
+    font-weight: 14px;
+    margin-left: 150px;
+    border-radius: 30px;
+}
+button
+{
+    border: none;
+    outline: none;
+    padding: 10px 30px;
+    background: #556B2F;
+    color: beige;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 14px;
+}
+#list-container li
+{
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 115px;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+#list-container li::before
+{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50px;
+    background-image: url(images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 9px;
+    left: 80px;
+}
+#list-container li.checked
+{
+    color: #556B2F;
+    text-decoration: line-through;
+}
+#list-container li.checked::before
+{
+    background-image: url(images/checked.png);
+}
+#list-container li span
+{
+    background-image: url(images/trashcan.png);
+    background-size: cover;
+    position: absolute;
+    right: 120px;
+    top: 4px;
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    color: beige;
+    background: #556B2F;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 10px;
+}
+#list-container li span:hover
+{
+background: beige;
+color: #556B2F;
+border-radius: 10px;
+}
+#shopping-items-left
+{
+    text-align: center;
+    background-color: #556B2F;
+    width: 150px;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: beige;
+    margin: auto;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* Section 3
+ * Add Your Food
+*/
+
+.third-btn-hidden
+{
+    display: none;
+}
+#add-your-food-title
+{
+    text-align: center;
+    font-size: 25px;
+}
+.third-btn-hidden p
+{
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+.third-btn-hidden input
+{
+margin-left: 194px;
+margin-top: -20px;
+}
+#add-more-placeholders-title
+{
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+#ingredients-title
+{
+    margin-bottom: -3px;
+}
+#add-placeholders-btn
+{
+    background-image: url(images/add.png);
+    background-size: cover;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px 10px 10px 10px;
+    margin-left: 265px;
+    margin-top: 10px;
+}
+#input-value-ingredients
+{
+    margin-top: 15px;
+}
+#reset-btn
+{
+    margin-right: 100px;
+    padding: 7px 8px 7px 8px;
+}
+#add-all-btn
+{
+    padding: 7px 10px 7px 10px;
+    margin-left: 215px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Add your food to insperation
+*In list
+*/
+
+/*
+*Classes to use
+*/
+
+.second-checked
+{
+    display: none;
+}
