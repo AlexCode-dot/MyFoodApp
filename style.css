@@ -95,7 +95,7 @@ h2
     outline: none;
     background: #556B2F;
     padding: 5px 20px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     margin-top: 20px;
     border-radius: 20px;
     font-size: 15px;
@@ -133,10 +133,36 @@ h2
     margin-top: 5px;
     margin-bottom: 15px;
     text-decoration: underline;
+    position: relative;
+}
+#remove-food-btn
+{
+    position: absolute;
+    font-size: 18px;
+    color: beige;
+    background: #556B2F;
+    border-radius: 5px; 
+    margin-left: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    top: 14px;
+    line-height: 20px;
+}
+#remove-food-btn:hover
+{
+background: beige;
+color: #556B2F;
+border-radius: 10px;
+font-size: 25px;
 }
 .breakfast-all-inside-btn
 {
     display: none;
+}
+.breakfast-btn-hidden ul
+{
+    margin-top: 15px;
+    margin-bottom: 2px;
 }
 .breakfast-btn-hidden ul li
 {
@@ -146,7 +172,7 @@ h2
     margin: auto;
     text-align: left;
     margin-right: 70px;
-    margin-top: -20pxpx;
+    margin-top: -10px;
     margin-bottom: 10px;
 }
 .lunch-btn-hidden
@@ -317,7 +343,7 @@ margin-top: -20px;
     margin-left: 265px;
     margin-top: 10px;
 }
-#input-value-ingredients
+.add-more-placeholders-class input
 {
     margin-top: 15px;
 }

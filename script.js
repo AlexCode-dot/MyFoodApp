@@ -255,6 +255,7 @@ addYourFoodBtn.addEventListener(
 const addPlaceholdersBtn = document.querySelector("#add-placeholders-btn");
 const addMorePlaceholdersClass = document.querySelector(".add-more-placeholders-class");
 const addMorePlaceholdersTitle = document.querySelector("#add-more-placeholders-title");
+let idAdd = 0;
 
 addPlaceholdersBtn.addEventListener(
     "click",
@@ -268,12 +269,15 @@ function addMorePlaceholdersFunction()
 
     addMorePlaceholdersClass.appendChild(addMorePlaceholder);
     addMorePlaceholder.setAttribute("type", "text");
-    addMorePlaceholder.setAttribute("id", "input-value-ingredients");
+    addMorePlaceholder.setAttribute("id", "input-value-ingredients" + idAdd);
     addMorePlaceholder.setAttribute("placeholder", "Add ingredient...");
+    idAdd++;
 }
 
 
 //Section 3 (Add to insperation)
+
+
 
 const addToInsperationBtn = document.querySelector("#add-to-insperation-btn");
 const inputValueFoodTitle = document.querySelector("#input-value-foodTitle");
@@ -307,17 +311,52 @@ function addAllFuntion()
     foodTitleBtn.setAttribute("type", "button");
     foodTitleBtn.setAttribute("class", "button-append");
     foodTitleBtn.setAttribute("id", `BoxName${boxNameCount}`); 
+   
+
+
+breakfastBtnHidden.addEventListener("click", function(e)
+{
+ if (e.target.tagName === "SPAN")
+ {
+   e.target.parentElement.remove();  
+   arrayFunction2();  
+ }
+});
+
+    function arrayFunction2()
+    {
+        boxNameCount = 1;
+        for (let i = 0; i < breakfastBtnHidden.children.length; i++) 
+        {
+            let toDo = breakfastBtnHidden.children.item(i);
+            
+            for (let i=1; i < toDo.children.length; i=i+2) 
+                {
+                     let ulList = toDo.children.item(i);
+                     ulList.setAttribute("id", `BoxName${boxNameCount}Div`);
+                }
+
+            toDo.setAttribute("id", `BoxName${boxNameCount}`); 
+            boxNameCount++;
+        }
+        
+    }
+
     let inputText = inputValueFoodTitle.value;
+
+    const spanRemove = document.createElement("span");
+    spanRemove.innerHTML = "\u00d7";
+    spanRemove.setAttribute("id", "remove-food-btn");
+    foodTitleBtn.append(spanRemove);
     
     foodTitleBtn.addEventListener(
         "click",
         function()
         {
             foodTitleBtn.classList.toggle("second-checked");
-            ShowCheckboxDiv();
-            console.log("second-checked");    
+            
+             ShowCheckboxDiv();
         }
-        
     )
 
     let foodTitleUl = document.createElement("ul");
@@ -339,19 +378,21 @@ function addAllFuntion()
 
 function ShowCheckboxDiv() 
 {
-    for (x=1;x<=breakfastBtnHidden.children.length;x++) {
+ for (x=1;x<=breakfastBtnHidden.children.length;x++) 
+ {
+
         CheckThisBox = 'BoxName'+ x;
         BoxDiv = 'BoxName' + x + "Div";
-       console.log("btn clicked")
-       console.log(CheckThisBox);
     
-    if (document.getElementById(CheckThisBox).classList.contains("second-checked")) {
+    if (document.getElementById(CheckThisBox).classList.contains("second-checked")) 
+        {
         document.getElementById(BoxDiv).style.display = "block";
         }
-    else {
+    else 
+    {
         document.getElementById(BoxDiv).style.display = "none";
-        }
     }
+ }
 }
 
 const resetBtn = document.querySelector("#reset-btn");
@@ -366,6 +407,7 @@ function resetBtnFunction()
 {
     inputAll.value = "";
     inputValueFoodTitle.value = "";
+    idAdd = 0;
 
     while (addMorePlaceholdersClass.firstChild) 
     { 
