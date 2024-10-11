@@ -7,7 +7,7 @@
 }
 h1
 {
-    font-size: 55px;
+    font-size: 75px;
     align-items: center;
     margin: 100px auto 20px;
     text-align: center;
@@ -175,6 +175,23 @@ font-size: 25px;
     margin-top: -10px;
     margin-bottom: 10px;
 }
+
+/*
+*Lunch Section
+*/
+.lunch-btn-hidden button
+{
+    font-size: 24px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    color: #556B2F;
+    background: beige;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-decoration: underline;
+    position: relative;
+}
 .lunch-btn-hidden
 {
     display: none;
@@ -208,7 +225,7 @@ font-size: 25px;
     padding-left: 20px;
     margin-bottom: 25px;
 }
-input
+.second-btn-hidden input
 {
     border: none;
     outline: none;
@@ -304,10 +321,21 @@ border-radius: 10px;
 .third-btn-hidden
 {
     display: none;
+    text-align: center;
+}
+.third-btn-hidden button
+{
+    padding: 10px 15px 10px 15px;
+    margin-right: 7px;
+    font-size: 18px;
+}
+.choose-food-option
+{
+    display: none;
+    text-align: center;
 }
 #add-your-food-title
 {
-    text-align: center;
     font-size: 25px;
 }
 .third-btn-hidden p
@@ -318,15 +346,19 @@ border-radius: 10px;
 }
 .third-btn-hidden input
 {
-margin-left: 194px;
-margin-top: -20px;
+ margin-top: -20px;
+ border: none;
+outline: none;
+background: white;
+padding: 10px;
+font-weight: 14px;
+border-radius: 30px;
 }
 #add-more-placeholders-title
 {
     font-size: 12px;
     font-weight: normal;
     margin-top: 5px;
-    margin-left: 10px;
 }
 #ingredients-title
 {
@@ -340,22 +372,23 @@ margin-top: -20px;
     margin: auto;
     margin-top: 20px;
     padding: 10px 10px 10px 10px;
-    margin-left: 265px;
     margin-top: 10px;
 }
 .add-more-placeholders-class input
 {
     margin-top: 15px;
 }
+.add-more-placeholders-class
+{
+    text-align: center;
+}
 #reset-btn
 {
-    margin-right: 100px;
     padding: 7px 8px 7px 8px;
 }
 #add-all-btn
 {
     padding: 7px 10px 7px 10px;
-    margin-left: 215px;
     padding-left: 15px;
     padding-right: 15px;
 }

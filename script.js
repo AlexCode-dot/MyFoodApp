@@ -111,6 +111,102 @@ else
 }
 }
 
+//Choose Option Hidden
+
+const chooseFoodOption = document.querySelector(".choose-food-option");
+const optionBtnBreakfast = document.querySelector("#option-btn-breakfast");
+const optionBtnLunch = document.querySelector("#option-btn-lunch");
+const optionBtnDinner = document.querySelector("#option-btn-dinner");
+const optionBtnSnack = document.querySelector("#option-btn-snack");
+
+
+//Section 1 (Insperation)
+
+optionBtnBreakfast.addEventListener(
+    "click",
+    toggleClassOptionBtn1,
+    false
+);
+
+optionBtnLunch.addEventListener(
+    "click",
+    toggleClassOptionBtn2,
+    false
+);
+
+optionBtnDinner.addEventListener(
+    "click",
+    toggleClassOptionBtn3,
+    false
+);
+
+optionBtnSnack.addEventListener(
+    "click",
+    toggleClassOptionBtn4,
+    false
+);
+
+function toggleClassOptionBtn1()
+{
+
+    optionBtnBreakfast.setAttribute("class", "breakfast");
+
+if (chooseFoodOption.style.display === "block")
+{
+    chooseFoodOption.style.display = "none";
+}
+else
+{
+    chooseFoodOption.style.display = "block";
+}
+}
+
+function toggleClassOptionBtn2()
+{
+
+    optionBtnBreakfast.setAttribute("class", "lunch");
+
+if (chooseFoodOption.style.display === "block")
+{
+    chooseFoodOption.style.display = "none";
+}
+else
+{
+    chooseFoodOption.style.display = "block";
+}
+}
+
+function toggleClassOptionBtn3()
+{
+
+    optionBtnBreakfast.setAttribute("class", "dinner");
+
+if (chooseFoodOption.style.display === "block")
+{
+    chooseFoodOption.style.display = "none";
+}
+else
+{
+    chooseFoodOption.style.display = "block";
+}
+}
+
+function toggleClassOptionBtn4()
+{
+
+    optionBtnBreakfast.setAttribute("class", "snack");
+
+if (chooseFoodOption.style.display === "block")
+{
+    chooseFoodOption.style.display = "none";
+}
+else
+{
+    chooseFoodOption.style.display = "block";
+}
+}
+
+
 //Section 2 (Shopping List)
 
 const secondBtnHidden = document.querySelector(".second-btn-hidden");
@@ -230,7 +326,6 @@ function removeOne()
  
 
 
-
 const thirdBtnHidden = document.querySelector(".third-btn-hidden");
 const addYourFoodBtn = document.querySelector("#addYourFood-btn");
 
@@ -275,7 +370,7 @@ function addMorePlaceholdersFunction()
 }
 
 
-//Section 3 (Add to insperation)
+//Section 3 (Add to insperation [Breakfast])
 
 
 
@@ -285,15 +380,23 @@ const inputValueFoodTitle = document.querySelector("#input-value-foodTitle");
 let myArray = [];
 const addAllBtn = document.querySelector("#add-all-btn");
 const inputAll = document.querySelectorAll("#input-value-ingredients");
-let boxNameCount = 1;//Test
+let nameCount = 1;//Test
 
-addAllBtn.addEventListener(
-    "click",
-    addAllFuntion,
-    false
+addAllBtn.addEventListener("click", function()
+{
+    if (optionBtnBreakfast.classList.contains("breakfast"))
+        {
+            addAllFuntion1();
+        }
+    if (optionBtnBreakfast.classList.contains("lunch"))
+        {
+            addAllFuntion2();
+        }    
+}
 );
 
-function addAllFuntion()
+
+function addAllFuntion1()
 {
     let input = document.querySelectorAll(".add-more-placeholders-class input");
     for (let i = 0; i < input.length; i++) 
@@ -310,7 +413,7 @@ function addAllFuntion()
     breakfastBtnHidden.append(foodTitleBtn);
     foodTitleBtn.setAttribute("type", "button");
     foodTitleBtn.setAttribute("class", "button-append");
-    foodTitleBtn.setAttribute("id", `BoxName${boxNameCount}`); 
+    foodTitleBtn.setAttribute("id", `BreakfastTitle${nameCount}`); 
    
 
 
@@ -325,7 +428,7 @@ breakfastBtnHidden.addEventListener("click", function(e)
 
     function arrayFunction2()
     {
-        boxNameCount = 1;
+        nameCount = 1;
         for (let i = 0; i < breakfastBtnHidden.children.length; i++) 
         {
             let toDo = breakfastBtnHidden.children.item(i);
@@ -333,11 +436,11 @@ breakfastBtnHidden.addEventListener("click", function(e)
             for (let i=1; i < toDo.children.length; i=i+2) 
                 {
                      let ulList = toDo.children.item(i);
-                     ulList.setAttribute("id", `BoxName${boxNameCount}Div`);
+                     ulList.setAttribute("id", `BreakfastTitle${nameCount}Div`);
                 }
 
-            toDo.setAttribute("id", `BoxName${boxNameCount}`); 
-            boxNameCount++;
+            toDo.setAttribute("id", `BreakfastTitle${nameCount}`); 
+            nameCount++;
         }
         
     }
@@ -361,9 +464,9 @@ breakfastBtnHidden.addEventListener("click", function(e)
 
     let foodTitleUl = document.createElement("ul");
     foodTitleUl.setAttribute("class", inputText);
-    foodTitleUl.setAttribute("id", `BoxName${boxNameCount}Div`);
+    foodTitleUl.setAttribute("id", `BreakfastTitle${nameCount}Div`);
     foodTitleUl.style.display = "none";
-    boxNameCount++;
+    nameCount++;
 
     for(let i=0; i<myArray.length; i++)
     { 
@@ -381,8 +484,8 @@ function ShowCheckboxDiv()
  for (x=1;x<=breakfastBtnHidden.children.length;x++) 
  {
 
-        CheckThisBox = 'BoxName'+ x;
-        BoxDiv = 'BoxName' + x + "Div";
+        CheckThisBox = 'BreakfastTitle'+ x;
+        BoxDiv = 'BreakfastTitle' + x + "Div";
     
     if (document.getElementById(CheckThisBox).classList.contains("second-checked")) 
         {
@@ -417,4 +520,125 @@ function resetBtnFunction()
     while (myArray.length > 0) {
         myArray.pop();
       }
+}
+
+
+//Section 3 (Add to insperation [Lunch])
+
+
+
+
+addAllBtn.addEventListener("click", function()
+{
+    if (optionBtnBreakfast.classList.contains("breakfast"))
+        {
+            addAllFuntion1();
+        }
+    if (optionBtnBreakfast.classList.contains("lunch"))
+        {
+            addAllFuntion2();
+        }    
+}
+);
+
+function addAllFuntion2()
+{
+    let input = document.querySelectorAll(".add-more-placeholders-class input");
+    for (let i = 0; i < input.length; i++) 
+    {
+       myArray.push(input[i].value);
+    }
+    console.log(myArray);
+
+    let firstInput = inputValueFoodTitle.value;
+    const foodTitleBtn = document.createElement("button");
+
+    let finalInput = firstInput.charAt(0).toUpperCase() + firstInput.slice(1);
+    foodTitleBtn.innerHTML = finalInput
+    lunchBtnHidden.append(foodTitleBtn);
+    foodTitleBtn.setAttribute("type", "button");
+    foodTitleBtn.setAttribute("class", "button-append");
+    foodTitleBtn.setAttribute("id", `BreakfastTitle${nameCount}`); 
+   
+
+
+lunchBtnHidden.addEventListener("click", function(e)
+{
+ if (e.target.tagName === "SPAN")
+ {
+   e.target.parentElement.remove();  
+   arrayFunction2();  
+ }
+});
+
+    function arrayFunction2()
+    {
+        nameCount = 1;
+        for (let i = 0; i < lunchBtnHidden.children.length; i++) 
+        {
+            let toDo = lunchBtnHidden.children.item(i);
+            
+            for (let i=1; i < toDo.children.length; i=i+2) 
+                {
+                     let ulList = toDo.children.item(i);
+                     ulList.setAttribute("id", `BreakfastTitle${nameCount}Div`);
+                }
+
+            toDo.setAttribute("id", `BreakfastTitle${nameCount}`); 
+            nameCount++;
+        }
+        
+    }
+
+    let inputText = inputValueFoodTitle.value;
+
+    const spanRemove = document.createElement("span");
+    spanRemove.innerHTML = "\u00d7";
+    spanRemove.setAttribute("id", "remove-food-btn");
+    foodTitleBtn.append(spanRemove);
+    
+    foodTitleBtn.addEventListener(
+        "click",
+        function()
+        {
+            foodTitleBtn.classList.toggle("second-checked");
+            
+             ShowCheckboxDiv();
+        }
+    )
+
+    let foodTitleUl = document.createElement("ul");
+    foodTitleUl.setAttribute("class", inputText);
+    foodTitleUl.setAttribute("id", `BreakfastTitle${nameCount}Div`);
+    foodTitleUl.style.display = "none";
+    nameCount++;
+
+    for(let i=0; i<myArray.length; i++)
+    { 
+        let li = document.createElement("li");
+        li.textContent = myArray[i];
+        foodTitleUl.appendChild(li);
+    }
+    
+    foodTitleBtn.appendChild(foodTitleUl);
+
+}
+
+function ShowCheckboxDiv() 
+{
+ for (x=1;x<=lunchBtnHidden.children.length;x++) 
+ {
+
+        CheckThisBox = 'BreakfastTitle'+ x;
+        BoxDiv = 'BreakfastTitle' + x + "Div";
+    
+    if (document.getElementById(CheckThisBox).classList.contains("second-checked")) 
+        {
+        document.getElementById(BoxDiv).style.display = "block";
+        }
+    else 
+    {
+        document.getElementById(BoxDiv).style.display = "none";
+    }
+ }
 }
