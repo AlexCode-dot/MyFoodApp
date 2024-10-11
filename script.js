@@ -386,6 +386,7 @@ function addMorePlaceholdersFunction()
 
     addMorePlaceholdersClass.appendChild(addMorePlaceholder);
     addMorePlaceholder.setAttribute("type", "text");
+    addMorePlaceholder.setAttribute("class", "input-value-ingredients-class")
     addMorePlaceholder.setAttribute("id", "input-value-ingredients" + idAdd);
     addMorePlaceholder.setAttribute("placeholder", "Add ingredient...");
     idAdd++;
