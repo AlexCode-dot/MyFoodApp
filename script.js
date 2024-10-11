@@ -118,6 +118,8 @@ const optionBtnBreakfast = document.querySelector("#option-btn-breakfast");
 const optionBtnLunch = document.querySelector("#option-btn-lunch");
 const optionBtnDinner = document.querySelector("#option-btn-dinner");
 const optionBtnSnack = document.querySelector("#option-btn-snack");
+const hideOptionButtons = document.querySelector(".hide-option-buttons");
+const foodTypeTitle = document.querySelector("#food-type-title");
 
 
 //Section 1 (Insperation)
@@ -151,6 +153,7 @@ function toggleClassOptionBtn1()
 
     optionBtnBreakfast.setAttribute("class", "breakfast");
 
+
 if (chooseFoodOption.style.display === "block")
 {
     chooseFoodOption.style.display = "none";
@@ -159,6 +162,10 @@ else
 {
     chooseFoodOption.style.display = "block";
 }
+
+ hideOptionButtons.style.display = "none";
+ foodTypeTitle.innerHTML = "Breakfast"
+
 }
 
 function toggleClassOptionBtn2()
@@ -166,6 +173,7 @@ function toggleClassOptionBtn2()
 
     optionBtnBreakfast.setAttribute("class", "lunch");
 
+
 if (chooseFoodOption.style.display === "block")
 {
     chooseFoodOption.style.display = "none";
@@ -174,6 +182,10 @@ else
 {
     chooseFoodOption.style.display = "block";
 }
+
+ hideOptionButtons.style.display = "none";
+ foodTypeTitle.innerHTML = "Lunch"
+
 }
 
 function toggleClassOptionBtn3()
@@ -181,6 +193,7 @@ function toggleClassOptionBtn3()
 
     optionBtnBreakfast.setAttribute("class", "dinner");
 
+
 if (chooseFoodOption.style.display === "block")
 {
     chooseFoodOption.style.display = "none";
@@ -189,6 +202,10 @@ else
 {
     chooseFoodOption.style.display = "block";
 }
+
+ hideOptionButtons.style.display = "none";
+ foodTypeTitle.innerHTML = "Dinner"
+
 }
 
 function toggleClassOptionBtn4()
@@ -196,6 +213,7 @@ function toggleClassOptionBtn4()
 
     optionBtnBreakfast.setAttribute("class", "snack");
 
+
 if (chooseFoodOption.style.display === "block")
 {
     chooseFoodOption.style.display = "none";
@@ -204,6 +222,10 @@ else
 {
     chooseFoodOption.style.display = "block";
 }
+
+ hideOptionButtons.style.display = "none";
+ foodTypeTitle.innerHTML = "Snack"
+
 }
 
 
@@ -370,17 +392,17 @@ function addMorePlaceholdersFunction()
 }
 
 
-//Section 3 (Add to insperation [Breakfast])
+//Section 3 (Add to insperation)
 
 
 
 const addToInsperationBtn = document.querySelector("#add-to-insperation-btn");
 const inputValueFoodTitle = document.querySelector("#input-value-foodTitle");
-
 let myArray = [];
 const addAllBtn = document.querySelector("#add-all-btn");
 const inputAll = document.querySelectorAll("#input-value-ingredients");
-let nameCount = 1;//Test
+let nameCountBreakfast = 1;
+
 
 addAllBtn.addEventListener("click", function()
 {
@@ -391,9 +413,21 @@ addAllBtn.addEventListener("click", function()
     if (optionBtnBreakfast.classList.contains("lunch"))
         {
             addAllFuntion2();
-        }    
-}
-);
+        }
+    if (optionBtnBreakfast.classList.contains("lunch"))
+        {
+            addAllFuntion3();
+        }
+    if (optionBtnBreakfast.classList.contains("lunch"))
+        {
+            addAllFuntion4();
+        }                
+});
+
+
+
+//Section 3 (Add to insperation [Breakfast])
+
 
 
 function addAllFuntion1()
@@ -406,14 +440,14 @@ function addAllFuntion1()
     console.log(myArray);
 
     let firstInput = inputValueFoodTitle.value;
-    const foodTitleBtn = document.createElement("button");
+    const breakfastTitleBtn = document.createElement("button");
 
     let finalInput = firstInput.charAt(0).toUpperCase() + firstInput.slice(1);
-    foodTitleBtn.innerHTML = finalInput
-    breakfastBtnHidden.append(foodTitleBtn);
-    foodTitleBtn.setAttribute("type", "button");
-    foodTitleBtn.setAttribute("class", "button-append");
-    foodTitleBtn.setAttribute("id", `BreakfastTitle${nameCount}`); 
+    breakfastTitleBtn.innerHTML = finalInput
+    breakfastBtnHidden.append(breakfastTitleBtn);
+    breakfastTitleBtn.setAttribute("type", "button");
+    breakfastTitleBtn.setAttribute("class", "button-append");
+    breakfastTitleBtn.setAttribute("id", `BreakfastTitle${nameCountBreakfast}`); 
    
 
 
@@ -428,19 +462,19 @@ breakfastBtnHidden.addEventListener("click", function(e)
 
     function arrayFunction2()
     {
-        nameCount = 1;
+        nameCountBreakfast = 1;
         for (let i = 0; i < breakfastBtnHidden.children.length; i++) 
         {
-            let toDo = breakfastBtnHidden.children.item(i);
+            let buttonTitle = breakfastBtnHidden.children.item(i);
             
-            for (let i=1; i < toDo.children.length; i=i+2) 
+            for (let i=1; i < buttonTitle.children.length; i=i+2) 
                 {
-                     let ulList = toDo.children.item(i);
-                     ulList.setAttribute("id", `BreakfastTitle${nameCount}Div`);
+                     let ulList = buttonTitle.children.item(i);
+                     ulList.setAttribute("id", `BreakfastTitle${nameCountBreakfast}Div`);
                 }
 
-            toDo.setAttribute("id", `BreakfastTitle${nameCount}`); 
-            nameCount++;
+            buttonTitle.setAttribute("id", `BreakfastTitle${nameCountBreakfast}`); 
+            nameCountBreakfast++;
         }
         
     }
@@ -450,32 +484,32 @@ breakfastBtnHidden.addEventListener("click", function(e)
     const spanRemove = document.createElement("span");
     spanRemove.innerHTML = "\u00d7";
     spanRemove.setAttribute("id", "remove-food-btn");
-    foodTitleBtn.append(spanRemove);
+    breakfastTitleBtn.append(spanRemove);
     
-    foodTitleBtn.addEventListener(
+    breakfastTitleBtn.addEventListener(
         "click",
         function()
         {
-            foodTitleBtn.classList.toggle("second-checked");
+            breakfastTitleBtn.classList.toggle("second-checked");
             
              ShowCheckboxDiv();
         }
     )
 
-    let foodTitleUl = document.createElement("ul");
-    foodTitleUl.setAttribute("class", inputText);
-    foodTitleUl.setAttribute("id", `BreakfastTitle${nameCount}Div`);
-    foodTitleUl.style.display = "none";
-    nameCount++;
+    let breakfastTitleUl = document.createElement("ul");
+    breakfastTitleUl.setAttribute("class", inputText);
+    breakfastTitleUl.setAttribute("id", `BreakfastTitle${nameCountBreakfast}Div`);
+    breakfastTitleUl.style.display = "none";
+    nameCountBreakfast++;
 
     for(let i=0; i<myArray.length; i++)
     { 
         let li = document.createElement("li");
         li.textContent = myArray[i];
-        foodTitleUl.appendChild(li);
+        breakfastTitleUl.appendChild(li);
     }
     
-    foodTitleBtn.appendChild(foodTitleUl);
+    breakfastTitleBtn.appendChild(breakfastTitleUl);
 
 }
 
@@ -484,19 +518,357 @@ function ShowCheckboxDiv()
  for (x=1;x<=breakfastBtnHidden.children.length;x++) 
  {
 
-        CheckThisBox = 'BreakfastTitle'+ x;
-        BoxDiv = 'BreakfastTitle' + x + "Div";
+        CheckBreakfastBtn = 'BreakfastTitle'+ x;
+        CheckBreakfastUl = 'BreakfastTitle' + x + "Div";
     
-    if (document.getElementById(CheckThisBox).classList.contains("second-checked")) 
+    if (document.getElementById(CheckBreakfastBtn).classList.contains("second-checked")) 
         {
-        document.getElementById(BoxDiv).style.display = "block";
+        document.getElementById(CheckBreakfastUl).style.display = "block";
         }
     else 
     {
-        document.getElementById(BoxDiv).style.display = "none";
+        document.getElementById(CheckBreakfastUl).style.display = "none";
     }
  }
 }
+
+
+
+
+//Section 3 (Add to insperation [Lunch])
+
+
+
+let nameCountLunch = 1;
+
+function addAllFuntion2()
+{
+    let input = document.querySelectorAll(".add-more-placeholders-class input");
+    for (let i = 0; i < input.length; i++) 
+    {
+       myArray.push(input[i].value);
+    }
+    console.log(myArray);
+
+    let firstInput = inputValueFoodTitle.value;
+    const foodTitleBtnLunch = document.createElement("button");
+
+    let finalInput = firstInput.charAt(0).toUpperCase() + firstInput.slice(1);
+    foodTitleBtnLunch.innerHTML = finalInput
+    lunchBtnHidden.append(foodTitleBtnLunch);
+    foodTitleBtnLunch.setAttribute("type", "button");
+    foodTitleBtnLunch.setAttribute("class", "button-append");
+    foodTitleBtnLunch.setAttribute("id", `LunchTitle${nameCountLunch}`); 
+   
+
+
+lunchBtnHidden.addEventListener("click", function(e)
+{
+ if (e.target.tagName === "SPAN")
+ {
+   e.target.parentElement.remove();  
+   arrayFunction3();  
+ }
+});
+
+    function arrayFunction3()
+    {
+        nameCountLunch = 1;
+        for (let i = 0; i < lunchBtnHidden.children.length; i++) 
+        {
+            let buttonTitle = lunchBtnHidden.children.item(i);
+            
+            for (let i=1; i < buttonTitle.children.length; i=i+2) 
+                {
+                     let ulList = buttonTitle.children.item(i);
+                     ulList.setAttribute("id", `LunchTitle${nameCountLunch}Div`);
+                }
+
+            buttonTitle.setAttribute("id", `LunchTitle${nameCountLunch}`); 
+            nameCountLunch++;
+        }
+        
+    }
+
+    let inputText = inputValueFoodTitle.value;
+
+    const spanRemove = document.createElement("span");
+    spanRemove.innerHTML = "\u00d7";
+    spanRemove.setAttribute("id", "remove-food-btn");
+    foodTitleBtnLunch.append(spanRemove);
+    
+    foodTitleBtnLunch.addEventListener(
+        "click",
+        function()
+        {
+            foodTitleBtnLunch.classList.toggle("third-checked");
+            
+             ShowCheckboxDiv2();
+        }
+    )
+
+    let LunchTitleUl = document.createElement("ul");
+    LunchTitleUl.setAttribute("class", inputText);
+    LunchTitleUl.setAttribute("id", `LunchTitle${nameCountLunch}Div`);
+    LunchTitleUl.style.display = "none";
+    nameCountLunch++;
+
+    for(let i=0; i<myArray.length; i++)
+    { 
+        let li = document.createElement("li");
+        li.textContent = myArray[i];
+        LunchTitleUl.appendChild(li);
+    }
+    
+    foodTitleBtnLunch.appendChild(LunchTitleUl);
+
+}
+
+function ShowCheckboxDiv2() 
+{
+ for (x=1;x<=lunchBtnHidden.children.length;x++) 
+ {
+
+        CheckLunchBtn = 'LunchTitle'+ x;
+        CheckLunchUl = 'LunchTitle' + x + "Div";
+    
+    if (document.getElementById(CheckLunchBtn).classList.contains("third-checked")) 
+        {
+        document.getElementById(CheckLunchUl).style.display = "block";
+        }
+    else 
+    {
+        document.getElementById(CheckLunchUl).style.display = "none";
+    }
+ }
+}
+
+
+//Section 3 (Add to insperation [Dinner])
+
+
+
+let nameCountDinner = 1;
+
+function addAllFuntion3()
+{
+    let input = document.querySelectorAll(".add-more-placeholders-class input");
+    for (let i = 0; i < input.length; i++) 
+    {
+       myArray.push(input[i].value);
+    }
+    console.log(myArray);
+
+    let firstInput = inputValueFoodTitle.value;
+    const foodTitleBtnDinner = document.createElement("button");
+
+    let finalInput = firstInput.charAt(0).toUpperCase() + firstInput.slice(1);
+    foodTitleBtnDinner.innerHTML = finalInput
+    dinnerBtnHidden.append(foodTitleBtnDinner);
+    foodTitleBtnDinner.setAttribute("type", "button");
+    foodTitleBtnDinner.setAttribute("class", "button-append");
+    foodTitleBtnDinner.setAttribute("id", `DinnerTitle${nameCountDinner}`); 
+   
+
+
+dinnerBtnHidden.addEventListener("click", function(e)
+{
+ if (e.target.tagName === "SPAN")
+ {
+   e.target.parentElement.remove();  
+   arrayFunction4();  
+ }
+});
+
+    function arrayFunction4()
+    {
+        nameCountDinner = 1;
+        for (let i = 0; i < dinnerBtnHidden.children.length; i++) 
+        {
+            let buttonTitle = dinnerBtnHidden.children.item(i);
+            
+            for (let i=1; i < buttonTitle.children.length; i=i+2) 
+                {
+                     let ulList = buttonTitle.children.item(i);
+                     ulList.setAttribute("id", `DinnerTitle${nameCountDinner}Div`);
+                }
+
+            buttonTitle.setAttribute("id", `DinnerTitle${nameCountDinner}`); 
+            nameCountDinner++;
+        }
+        
+    }
+
+    let inputText = inputValueFoodTitle.value;
+
+    const spanRemove = document.createElement("span");
+    spanRemove.innerHTML = "\u00d7";
+    spanRemove.setAttribute("id", "remove-food-btn");
+    foodTitleBtnDinner.append(spanRemove);
+    
+    foodTitleBtnDinner.addEventListener(
+        "click",
+        function()
+        {
+            foodTitleBtnDinner.classList.toggle("fourth-checked");
+            
+             ShowCheckboxDiv3();
+        }
+    )
+
+    let dinnerTitleUl = document.createElement("ul");
+    dinnerTitleUl.setAttribute("class", inputText);
+    dinnerTitleUl.setAttribute("id", `DinnerTitle${nameCountDinner}Div`);
+    dinnerTitleUl.style.display = "none";
+    nameCountDinner++;
+
+    for(let i=0; i<myArray.length; i++)
+    { 
+        let li = document.createElement("li");
+        li.textContent = myArray[i];
+        dinnerTitleUl.appendChild(li);
+    }
+    
+    foodTitleBtnDinner.appendChild(dinnerTitleUl);
+
+}
+
+function ShowCheckboxDiv3() 
+{
+ for (x=1;x<=dinnerBtnHidden.children.length;x++) 
+ {
+
+        CheckDinnerBtn = 'DinnerTitle'+ x;
+        CheckDinnerUl = 'DinnerTitle' + x + "Div";
+    
+    if (document.getElementById(CheckDinnerBtn).classList.contains("fourth-checked")) 
+        {
+        document.getElementById(CheckDinnerUl).style.display = "block";
+        }
+    else 
+    {
+        document.getElementById(CheckDinnerUl).style.display = "none";
+    }
+ }
+}
+
+
+
+//Section 3 (Add to insperation [Snack])
+
+
+
+
+let nameCountSnack = 1;
+
+function addAllFuntion4()
+{
+    let input = document.querySelectorAll(".add-more-placeholders-class input");
+    for (let i = 0; i < input.length; i++) 
+    {
+       myArray.push(input[i].value);
+    }
+    console.log(myArray);
+
+    let firstInput = inputValueFoodTitle.value;
+    const foodTitleBtnSnack = document.createElement("button");
+
+    let finalInput = firstInput.charAt(0).toUpperCase() + firstInput.slice(1);
+    foodTitleBtnSnack.innerHTML = finalInput
+    snackBtnHidden.append(foodTitleBtnSnack);
+    foodTitleBtnSnack.setAttribute("type", "button");
+    foodTitleBtnSnack.setAttribute("class", "button-append");
+    foodTitleBtnSnack.setAttribute("id", `SnackTitle${nameCountSnack}`); 
+   
+
+
+    snackBtnHidden.addEventListener("click", function(e)
+{
+ if (e.target.tagName === "SPAN")
+ {
+   e.target.parentElement.remove();  
+   arrayFunction5();  
+ }
+});
+
+    function arrayFunction5()
+    {
+        nameCountSnack = 1;
+        for (let i = 0; i < snackBtnHidden.children.length; i++) 
+        {
+            let buttonTitle = snackBtnHidden.children.item(i);
+            
+            for (let i=1; i < buttonTitle.children.length; i=i+2) 
+                {
+                     let ulList = buttonTitle.children.item(i);
+                     ulList.setAttribute("id", `SnackTitle${nameCountSnack}Div`);
+                }
+
+            buttonTitle.setAttribute("id", `SnackTitle${nameCountSnack}`); 
+            nameCountSnack++;
+        }
+        
+    }
+
+    let inputText = inputValueFoodTitle.value;
+
+    const spanRemove = document.createElement("span");
+    spanRemove.innerHTML = "\u00d7";
+    spanRemove.setAttribute("id", "remove-food-btn");
+    foodTitleBtnSnack.append(spanRemove);
+    
+    foodTitleBtnSnack.addEventListener(
+        "click",
+        function()
+        {
+            foodTitleBtnSnack.classList.toggle("fifth-checked");
+            
+             ShowCheckboxDiv4();
+        }
+    )
+
+    let snackTitleUl = document.createElement("ul");
+    snackTitleUl.setAttribute("class", inputText);
+    snackTitleUl.setAttribute("id", `SnackTitle${nameCountSnack}Div`);
+    snackTitleUl.style.display = "none";
+    nameCountSnack++;
+
+    for(let i=0; i<myArray.length; i++)
+    { 
+        let li = document.createElement("li");
+        li.textContent = myArray[i];
+        snackTitleUl.appendChild(li);
+    }
+    
+    foodTitleBtnSnack.appendChild(snackTitleUl);
+
+}
+
+function ShowCheckboxDiv4() 
+{
+ for (x=1;x<=snackBtnHidden.children.length;x++) 
+ {
+
+        CheckSnackBtn = 'SnackTitle'+ x;
+        CheckSnackUl = 'SnackTitle' + x + "Div";
+    
+    if (document.getElementById(CheckSnackBtn).classList.contains("fifth-checked")) 
+        {
+        document.getElementById(CheckSnackUl).style.display = "block";
+        }
+    else 
+    {
+        document.getElementById(CheckSnackUl).style.display = "none";
+    }
+ }
+}
+
+
+
+//Section 3 (Reset Button)
+
+
+
 
 const resetBtn = document.querySelector("#reset-btn");
 
@@ -520,125 +892,8 @@ function resetBtnFunction()
     while (myArray.length > 0) {
         myArray.pop();
       }
-}
 
+      chooseFoodOption.style.display = "none";
+      hideOptionButtons.style.display = "block";
 
-//Section 3 (Add to insperation [Lunch])
-
-
-
-
-addAllBtn.addEventListener("click", function()
-{
-    if (optionBtnBreakfast.classList.contains("breakfast"))
-        {
-            addAllFuntion1();
-        }
-    if (optionBtnBreakfast.classList.contains("lunch"))
-        {
-            addAllFuntion2();
-        }    
-}
-);
-
-function addAllFuntion2()
-{
-    let input = document.querySelectorAll(".add-more-placeholders-class input");
-    for (let i = 0; i < input.length; i++) 
-    {
-       myArray.push(input[i].value);
-    }
-    console.log(myArray);
-
-    let firstInput = inputValueFoodTitle.value;
-    const foodTitleBtn = document.createElement("button");
-
-    let finalInput = firstInput.charAt(0).toUpperCase() + firstInput.slice(1);
-    foodTitleBtn.innerHTML = finalInput
-    lunchBtnHidden.append(foodTitleBtn);
-    foodTitleBtn.setAttribute("type", "button");
-    foodTitleBtn.setAttribute("class", "button-append");
-    foodTitleBtn.setAttribute("id", `BreakfastTitle${nameCount}`); 
-   
-
-
-lunchBtnHidden.addEventListener("click", function(e)
-{
- if (e.target.tagName === "SPAN")
- {
-   e.target.parentElement.remove();  
-   arrayFunction2();  
- }
-});
-
-    function arrayFunction2()
-    {
-        nameCount = 1;
-        for (let i = 0; i < lunchBtnHidden.children.length; i++) 
-        {
-            let toDo = lunchBtnHidden.children.item(i);
-            
-            for (let i=1; i < toDo.children.length; i=i+2) 
-                {
-                     let ulList = toDo.children.item(i);
-                     ulList.setAttribute("id", `BreakfastTitle${nameCount}Div`);
-                }
-
-            toDo.setAttribute("id", `BreakfastTitle${nameCount}`); 
-            nameCount++;
-        }
-        
-    }
-
-    let inputText = inputValueFoodTitle.value;
-
-    const spanRemove = document.createElement("span");
-    spanRemove.innerHTML = "\u00d7";
-    spanRemove.setAttribute("id", "remove-food-btn");
-    foodTitleBtn.append(spanRemove);
-    
-    foodTitleBtn.addEventListener(
-        "click",
-        function()
-        {
-            foodTitleBtn.classList.toggle("second-checked");
-            
-             ShowCheckboxDiv();
-        }
-    )
-
-    let foodTitleUl = document.createElement("ul");
-    foodTitleUl.setAttribute("class", inputText);
-    foodTitleUl.setAttribute("id", `BreakfastTitle${nameCount}Div`);
-    foodTitleUl.style.display = "none";
-    nameCount++;
-
-    for(let i=0; i<myArray.length; i++)
-    { 
-        let li = document.createElement("li");
-        li.textContent = myArray[i];
-        foodTitleUl.appendChild(li);
-    }
-    
-    foodTitleBtn.appendChild(foodTitleUl);
-
-}
-
-function ShowCheckboxDiv() 
-{
- for (x=1;x<=lunchBtnHidden.children.length;x++) 
- {
-
-        CheckThisBox = 'BreakfastTitle'+ x;
-        BoxDiv = 'BreakfastTitle' + x + "Div";
-    
-    if (document.getElementById(CheckThisBox).classList.contains("second-checked")) 
-        {
-        document.getElementById(BoxDiv).style.display = "block";
-        }
-    else 
-    {
-        document.getElementById(BoxDiv).style.display = "none";
-    }
- }
 }

@@ -179,6 +179,8 @@ font-size: 25px;
 /*
 *Lunch Section
 */
+
+
 .lunch-btn-hidden button
 {
     font-size: 24px;
@@ -192,22 +194,110 @@ font-size: 25px;
     text-decoration: underline;
     position: relative;
 }
+.lunch-btn-hidden ul
+{
+    margin-top: 15px;
+    margin-bottom: 2px;
+}
+.lunch-btn-hidden ul li
+{
+    color: black;
+    font-size: 17px;
+    max-width: 30%;
+    margin: auto;
+    text-align: left;
+    margin-right: 70px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
 .lunch-btn-hidden
 {
     display: none;
 }
+
+/*
+*Dinner Section
+*/
+
+.dinner-btn-hidden button
+{
+    font-size: 24px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    color: #556B2F;
+    background: beige;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-decoration: underline;
+    position: relative;
+}
+.dinner-btn-hidden ul
+{
+    margin-top: 15px;
+    margin-bottom: 2px;
+}
+.dinner-btn-hidden ul li
+{
+    color: black;
+    font-size: 17px;
+    max-width: 30%;
+    margin: auto;
+    text-align: left;
+    margin-right: 70px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
 .dinner-btn-hidden
 {
     display: none;
+}
+
+
+/*
+*Snack Section
+*/
+
+
+.snack-btn-hidden button
+{
+    font-size: 24px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    color: #556B2F;
+    background: beige;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-decoration: underline;
+    position: relative;
+}
+.snack-btn-hidden ul
+{
+    margin-top: 15px;
+    margin-bottom: 2px;
+}
+.snack-btn-hidden ul li
+{
+    color: black;
+    font-size: 17px;
+    max-width: 30%;
+    margin: auto;
+    text-align: left;
+    margin-right: 70px;
+    margin-top: -10px;
+    margin-bottom: 10px;
 }
 .snack-btn-hidden
 {
     display: none;
 }
 
+
 /* Section 2
  * Shopping List
 */
+
 
 .second-btn-hidden
 {
@@ -332,6 +422,17 @@ border-radius: 10px;
 .choose-food-option
 {
     display: none;
+    text-align: center;
+}
+#food-type-title
+{
+    color: #556B2F;
+    font-size: 35px;
+    border-style: solid;
+    border-color: #556B2F;
+    border-width: thick;
+    width: 170px;
+    margin: auto;
     text-align: center;
 }
 #add-your-food-title
