@@ -302,6 +302,11 @@ font-size: 25px;
 .second-btn-hidden
 {
     display: none;
+    /*Test*/
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    /*Test*/
 }
 #shoppingList-title
 {
