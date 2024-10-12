@@ -286,6 +286,8 @@ function addItem()
   input.value = "";
 
   arrayFunction();
+  saveData();
+
 }
 
 listContainer.addEventListener("click", function(e)
@@ -301,7 +303,7 @@ listContainer.addEventListener("click", function(e)
 
   arrayFunction();
   removeOne();
-
+  saveData();
 });
 
 function arrayFunction() 
@@ -331,6 +333,9 @@ const taskCompleted = toDos.filter(task => task.completed);
 let shoppingItemsLeftToBuy = taskCompleted.length - toDos.length;
 shoppingItemsLeftToBuy *= -1;
 shoppingItemsLeft.textContent = "Items left to buy: " + shoppingItemsLeftToBuy;
+
+saveData();
+
 }
 
 function removeOne()
@@ -898,3 +903,20 @@ function resetBtnFunction()
       hideOptionButtons.style.display = "block";
 
 }
+
+
+//Local Storage
+
+
+
+function saveData()
+{
+    localStorage.setItem("data", listContainer.innerHTML);
+}
+
+function showTask()
+{
+    listContainer.innerHTML = localStorage.getItem("data");
+}
+
+showTask();
