@@ -258,6 +258,20 @@ else
 }
 }
 
+
+//With Enter
+
+
+document.querySelector("#input-value").addEventListener("keydown", function(event) {
+    if (event.keyCode === 13) {
+        addItem();
+    }
+  });
+
+  
+//With Add Button
+
+
 addBtn.addEventListener(
     "click",
     addItem,
@@ -517,6 +531,8 @@ breakfastBtnHidden.addEventListener("click", function(e)
     
     breakfastTitleBtn.appendChild(breakfastTitleUl);
 
+    resetBtnFunction();
+
 }
 
 function ShowCheckboxDiv() 
@@ -628,6 +644,8 @@ lunchBtnHidden.addEventListener("click", function(e)
     
     foodTitleBtnLunch.appendChild(LunchTitleUl);
 
+    resetBtnFunction();
+
 }
 
 function ShowCheckboxDiv2() 
@@ -736,6 +754,8 @@ dinnerBtnHidden.addEventListener("click", function(e)
     }
     
     foodTitleBtnDinner.appendChild(dinnerTitleUl);
+
+    resetBtnFunction();
 
 }
 
@@ -848,6 +868,8 @@ function addAllFuntion4()
     
     foodTitleBtnSnack.appendChild(snackTitleUl);
 
+    resetBtnFunction();
+
 }
 
 function ShowCheckboxDiv4() 
@@ -876,13 +898,6 @@ function ShowCheckboxDiv4()
 
 
 
-const resetBtn = document.querySelector("#reset-btn");
-
-resetBtn.addEventListener(
-    "click",
-    resetBtnFunction,
-    false
-);
 
 function resetBtnFunction()
 {

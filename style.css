@@ -463,6 +463,7 @@ border-radius: 10px;
 }
 #add-more-placeholders-title
 {
+    text-align: center;
     font-size: 12px;
     font-weight: normal;
     margin-top: 5px;
@@ -496,15 +497,13 @@ border-radius: 10px;
     display: block;
     margin-left: 190px;
 }
-#reset-btn
-{
-    padding: 7px 8px 7px 8px;
-}
 #add-all-btn
 {
+    text-align: center;
     padding: 7px 10px 7px 10px;
     padding-left: 15px;
     padding-right: 15px;
+    margin-left: 7px;
 }
 
 /* Add your food to insperation
