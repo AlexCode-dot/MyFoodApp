@@ -268,7 +268,7 @@ document.querySelector("#input-value").addEventListener("keydown", function(even
     }
   });
 
-  
+
 //With Add Button
 
 
@@ -284,11 +284,13 @@ function addItem()
   if (text.length == 0)
   {
     warningText.innerText = "You have to write something!";
+    warningText.setAttribute("class", "warning-text");
     return;
   }
   else
   {
     warningText.innerText = "";
+    warningText.removeAttribute("class");
   }
 
   const li = document.createElement("li");
@@ -421,6 +423,7 @@ const inputValueFoodTitle = document.querySelector("#input-value-foodTitle");
 let myArray = [];
 const addAllBtn = document.querySelector("#add-all-btn");
 const inputAll = document.querySelectorAll("#input-value-ingredients");
+const warningText2 = document.querySelector("#warning-text2");
 let nameCountBreakfast = 1;
 
 
@@ -434,11 +437,11 @@ addAllBtn.addEventListener("click", function()
         {
             addAllFuntion2();
         }
-    if (optionBtnBreakfast.classList.contains("lunch"))
+    if (optionBtnBreakfast.classList.contains("dinner"))
         {
             addAllFuntion3();
         }
-    if (optionBtnBreakfast.classList.contains("lunch"))
+    if (optionBtnBreakfast.classList.contains("snack"))
         {
             addAllFuntion4();
         }                
@@ -452,6 +455,18 @@ addAllBtn.addEventListener("click", function()
 
 function addAllFuntion1()
 {
+    let text = inputValueFoodTitle.value
+    if (text.length == 0)
+        {
+          warningText2.innerText = "You have to write something!";
+          warningText2.setAttribute("class", "warning-text");
+          return;
+        }
+        else
+        {
+          warningText2.innerText = "";
+          warningText2.removeAttribute("class");
+        }
     let input = document.querySelectorAll(".add-more-placeholders-class input");
     for (let i = 0; i < input.length; i++) 
     {
@@ -565,6 +580,18 @@ let nameCountLunch = 1;
 
 function addAllFuntion2()
 {
+    let text = inputValueFoodTitle.value
+    if (text.length == 0)
+        {
+          warningText2.innerText = "You have to write something!";
+          warningText2.setAttribute("class", "warning-text");
+          return;
+        }
+        else
+        {
+          warningText2.innerText = "";
+          warningText2.removeAttribute("class");
+        }
     let input = document.querySelectorAll(".add-more-placeholders-class input");
     for (let i = 0; i < input.length; i++) 
     {
@@ -676,6 +703,18 @@ let nameCountDinner = 1;
 
 function addAllFuntion3()
 {
+    let text = inputValueFoodTitle.value
+    if (text.length == 0)
+        {
+          warningText2.innerText = "You have to write something!";
+          warningText2.setAttribute("class", "warning-text");
+          return;
+        }
+        else
+        {
+          warningText2.innerText = "";
+          warningText2.removeAttribute("class");
+        }
     let input = document.querySelectorAll(".add-more-placeholders-class input");
     for (let i = 0; i < input.length; i++) 
     {
@@ -789,6 +828,18 @@ let nameCountSnack = 1;
 
 function addAllFuntion4()
 {
+    let text = inputValueFoodTitle.value
+    if (text.length == 0)
+        {
+          warningText2.innerText = "You have to write something!";
+          warningText2.setAttribute("class", "warning-text");
+          return;
+        }
+        else
+        {
+          warningText2.innerText = "";
+          warningText2.removeAttribute("class");
+        }
     let input = document.querySelectorAll(".add-more-placeholders-class input");
     for (let i = 0; i < input.length; i++) 
     {

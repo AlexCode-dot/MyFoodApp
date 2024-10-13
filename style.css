@@ -330,6 +330,15 @@ font-size: 25px;
     margin-left: 150px;
     border-radius: 30px;
 }
+.warning-text
+{
+    text-align: center;
+    color: #556B2F;
+    animation: blink 1s;
+    transition: opasity 1s;
+    animation-duration: 400ms;
+    animation-iteration-count: 3;
+}
 button
 {
     border: none;
@@ -350,6 +359,8 @@ button
     user-select: none;
     cursor: pointer;
     position: relative;
+    animation-name: slide-up;
+    animation-duration: 500ms;
 }
 #list-container li::before
 {
@@ -496,6 +507,13 @@ border-radius: 10px;
 {
     display: block;
     margin-left: 190px;
+    animation-name: slide-up;
+    animation-duration: 500ms;
+}
+#warning-text2
+{
+    font-weight: normal;
+    font-size: 16px;
 }
 #add-all-btn
 {
@@ -517,4 +535,60 @@ border-radius: 10px;
 .second-checked
 {
     display: none;
+}
+.third-checked
+{
+    display: none;
+}
+.fourth-checked
+{
+    display: none;
+}
+.fifth-checked
+{
+    display: none;
+}
+
+
+/*
+*Animations
+*/
+
+
+@keyframes slide-up 
+{
+    0% 
+    {
+      transform: translateY(205px);
+    }
+    50% 
+    {
+      transform: translateY(0px);
+    }
+}
+@keyframes slide-down 
+{
+    0% 
+    {
+      transform: translateY(0px);
+    }
+    50% 
+    {
+      transform: translateY(100px);
+    }
+}
+@keyframes blink
+{
+    0%
+    {
+        opacity: 1;
+    }
+    50%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 1;
+    }
 }
